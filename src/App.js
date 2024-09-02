@@ -1,23 +1,21 @@
-import logo from './logo.svg';
-import './App.css';
+import ProductCart from "./components/product-cart/ProductCart";
+import Image from "./assets/images (1).jpg";
 
 function App() {
+  // const category = ["بهداشتی،مراقبت از پوست،سرم پوست،مرطوب کننده"];
+  const category = ["بهداشتی", "مراقبت از پوست"];
+  const feature = ["آبرسان", "رطوبت رسان", "فاقد تست حیوانی"];
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+    <div>
+      <ProductCart
+        img={Image}
+        titlePer="سرم آبرسان پوست 40 میل بایومارین"
+        titleEng="DETOX Ultra Hydrating Serum 40ml BIOMARINE"
+        category={category}
+        feature={feature}
+        price="450000"
+        discount="10"
+      />
     </div>
   );
 }
