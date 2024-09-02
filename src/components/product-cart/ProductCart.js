@@ -7,7 +7,6 @@ import KeyboardArrowDownRoundedIcon from "@mui/icons-material/KeyboardArrowDownR
 import FavoriteBorderRoundedIcon from "@mui/icons-material/FavoriteBorderRounded";
 import MenuLink from "../menu-link/MenuLink";
 import WorkspacePremiumIcon from "@mui/icons-material/WorkspacePremium";
-import PersianNumber from "../persianNumber/PersianNumber";
 const ProductCart = ({
   img,
   titlePer,
@@ -17,10 +16,15 @@ const ProductCart = ({
   price,
   discount,
 }) => {
+  const convertToPersianNumber = (input) => {
+    const persianDigits = ["۰", "۱", "۲", "۳", "۴", "۵", "۶", "۷", "۸", "۹"];
+
+    return input.toString().replace(/\d/g, (digit) => persianDigits[digit]);
+  };
   const [count, setCount] = useState(0);
+
   const offer = (price * discount) / 100;
   const priceAfterDiscount = price - offer;
-  console.log(priceAfterDiscount);
   return (
     <div className="product-cart">
       <div className="cart-img">
@@ -72,13 +76,13 @@ const ProductCart = ({
           <div className="button">
             <div className="price">
               <p className="has-discount">
-                <PersianNumber number={price} />
+                {convertToPersianNumber(price)}
                 تومان
               </p>
-              <p> {priceAfterDiscount} تومان</p>
+              <p> {convertToPersianNumber(priceAfterDiscount)} تومان</p>
             </div>
             <div className="discount">
-              <p>10%</p>
+              <p>{convertToPersianNumber(discount)}%</p>
             </div>
           </div>
           <div className="button">
@@ -86,7 +90,7 @@ const ProductCart = ({
               <button className="add" onClick={() => setCount(count + 1)}>
                 +
               </button>
-              <p>{count}</p>
+              <p>{convertToPersianNumber(count)}</p>
               <button className="dec" onClick={() => setCount(count - 1)}>
                 -
               </button>
