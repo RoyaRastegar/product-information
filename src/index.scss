@@ -1,0 +1,6 @@
+@import "./direction-rtl";
+
+body {
+  direction: $direction;
+  text-align: $start-direction;
+}
