@@ -1,6 +1,14 @@
 @import "./direction-rtl";
 
+@font-face {
+  font-family: "Vazir";
+  src: url("./fonts//vazir/Vazir-FD-WOL.woff2") format("woff2"),
+    url("./fonts/vazir/Vazir-FD-WOL.woff") format("woff");
+  font-weight: normal;
+  font-style: normal;
+}
 body {
+  font-family: Vazir;
   direction: $direction;
   text-align: $start-direction;
 }

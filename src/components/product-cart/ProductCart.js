@@ -1,12 +1,16 @@
 import React, { useState } from "react";
+// style
 import "./productcart.scss";
+// components
 import StarBorderIcon from "@mui/icons-material/StarBorder";
 import PedalBikeRoundedIcon from "@mui/icons-material/PedalBikeRounded";
 import HeadsetMicRoundedIcon from "@mui/icons-material/HeadsetMicRounded";
 import KeyboardArrowDownRoundedIcon from "@mui/icons-material/KeyboardArrowDownRounded";
 import FavoriteBorderRoundedIcon from "@mui/icons-material/FavoriteBorderRounded";
-import MenuLink from "../menu-link/MenuLink";
 import WorkspacePremiumIcon from "@mui/icons-material/WorkspacePremium";
+
+import MenuLink from "../menu-link/MenuLink";
+
 const ProductCart = ({
   img,
   titlePer,
@@ -16,22 +20,24 @@ const ProductCart = ({
   price,
   discount,
 }) => {
-  const convertToPersianNumber = (input) => {
-    const persianDigits = ["۰", "۱", "۲", "۳", "۴", "۵", "۶", "۷", "۸", "۹"];
+  // conver function for persian number
+  // const convertToPersianNumber = (input) => {
+  //   const persianDigits = ["۰", "۱", "۲", "۳", "۴", "۵", "۶", "۷", "۸", "۹"];
 
-    return input.toString().replace(/\d/g, (digit) => persianDigits[digit]);
-  };
+  //   return input.toString().replace(/\d/g, (digit) => persianDigits[digit]);
+  // };
   const [count, setCount] = useState(0);
 
   const offer = (price * discount) / 100;
   const priceAfterDiscount = price - offer;
+
   return (
     <div className="product-cart">
       <div className="cart-img">
         <img src={img} alt="no pictur" />
       </div>
       <div className="cart-info">
-        <h3> {titlePer} </h3>
+        <h3>{titlePer} </h3>
         <h4>{titleEng} </h4>
         <h4>
           دسته بندی:
@@ -59,7 +65,7 @@ const ProductCart = ({
           />
           <MenuLink
             icon={<PedalBikeRoundedIcon />}
-            text="ارسال رایگان بالای 850.000 تومان"
+            text="ارسال رایگان بالای 850000 تومان"
           />
           <MenuLink
             icon={<HeadsetMicRoundedIcon />}
@@ -76,13 +82,13 @@ const ProductCart = ({
           <div className="button">
             <div className="price">
               <p className="has-discount">
-                {convertToPersianNumber(price)}
+                {price}
                 تومان
               </p>
-              <p> {convertToPersianNumber(priceAfterDiscount)} تومان</p>
+              <p> {priceAfterDiscount} تومان</p>
             </div>
             <div className="discount">
-              <p>{convertToPersianNumber(discount)}%</p>
+              <p>{discount}%</p>
             </div>
           </div>
           <div className="button">
@@ -90,7 +96,7 @@ const ProductCart = ({
               <button className="add" onClick={() => setCount(count + 1)}>
                 +
               </button>
-              <p>{convertToPersianNumber(count)}</p>
+              <p>{count}</p>
               <button className="dec" onClick={() => setCount(count - 1)}>
                 -
               </button>
