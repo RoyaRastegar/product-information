@@ -1,0 +1,23 @@
+.countainer {
+  display: flex;
+  height: 500px;
+  padding: 100px;
+  .right {
+    border: 1px solid gray;
+    border-radius: 20px;
+    align-content: center;
+  }
+  .middle {
+    padding: 20px;
+    margin-right: 20px;
+    align-content: center;
+  }
+  .left {
+    border: 1px solid gray;
+    border-radius: 20px;
+    flex-direction: column;
+    align-content: center;
+    padding-left: 10px;
+    padding-right: 10px;
+  }
+}
