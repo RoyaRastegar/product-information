@@ -7,6 +7,7 @@ import "./index.scss";
 import "./fonts/vazir/Vazir-FD-WOL.ttf";
 import "./fonts/vazir/Vazir-Light-FD-WOL.ttf";
 import "./fonts/vazir/Vazir-Bold-FD-WOL.ttf";
+
 const root = ReactDOM.createRoot(document.getElementById("root"));
 root.render(
   <React.StrictMode>
