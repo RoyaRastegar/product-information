@@ -8,6 +8,7 @@ import HeadsetMicRoundedIcon from "@mui/icons-material/HeadsetMicRounded";
 import KeyboardArrowDownRoundedIcon from "@mui/icons-material/KeyboardArrowDownRounded";
 import FavoriteBorderRoundedIcon from "@mui/icons-material/FavoriteBorderRounded";
 import WorkspacePremiumIcon from "@mui/icons-material/WorkspacePremium";
+import FavoriteIcon from "@mui/icons-material/Favorite";
 import CartSkeleton from "../cart-skeleton/CartSkeleton";
 import MenuLink from "../menu-link/MenuLink";
 // import image
@@ -19,6 +20,11 @@ const ProductCart = ({ loading }) => {
   const feature = ["آبرسان", "رطوبت رسان", "فاقد تست حیوانی"];
 
   const [count, setCount] = useState(0);
+  const [like, setLike] = useState(false);
+
+  function handelLike() {
+    setLike((like) => !like);
+  }
   const product = {
     img: Image,
     titlePer: "سرم آبرسان پوست 40 میل بایومارین",
@@ -30,6 +36,7 @@ const ProductCart = ({ loading }) => {
   };
   const offer = (product.price * product.discount) / 100;
   const priceAfterDiscount = product.price - offer;
+  console.log(like);
 
   return (
     <>
@@ -107,9 +114,12 @@ const ProductCart = ({ loading }) => {
                     -
                   </button>
                 </div>
-                <div className="like">
-                  {" "}
-                  <FavoriteBorderRoundedIcon />
+                <div className="like" onClick={handelLike}>
+                  {like ? (
+                    <FavoriteIcon className="like-active" />
+                  ) : (
+                    <FavoriteBorderRoundedIcon />
+                  )}
                 </div>
               </div>
               <div className="button">
