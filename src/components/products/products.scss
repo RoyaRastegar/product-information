@@ -5,3 +5,6 @@
   column-gap: 5px;
   justify-content: center;
 }
+.countainer {
+  @extend .products;
+}
