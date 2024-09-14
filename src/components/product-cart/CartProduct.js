@@ -2,18 +2,15 @@ import "./cartproduct.scss";
 import "react-loading-skeleton/dist/skeleton.css";
 import AddShoppingCartIcon from "@mui/icons-material/AddShoppingCart";
 // import image
-import CartItemImage from "../../assets/download.jpg";
 import CartSkeleton from "../cart-skeleton/CartSkeleton";
+import { useState } from "react";
 
-const CartProduct = ({ loading }) => {
-  const cartItem = {
-    img: CartItemImage,
-    title: "کرم آبرسان",
-    brand: "هیدرودرم",
-    price: "1450000",
-    discount: "120000",
-  };
-
+const CartProduct = ({ loading, item, handelAddToCart }) => {
+  const [amount, setAmount] = useState(item.amount || 0);
+  function handelAmount() {
+    setAmount(amount + 1);
+    handelAddToCart(item);
+  }
   return (
     <>
       {loading ? (
@@ -22,7 +19,7 @@ const CartProduct = ({ loading }) => {
         <div className="cart">
           <div className="img">
             <img
-              src={cartItem.img}
+              src={item.img}
               alt="محصول "
               width="300px"
               height="150px"
@@ -31,20 +28,21 @@ const CartProduct = ({ loading }) => {
             <div className="percent">%</div>
           </div>
           <div className="title">
-            <div>{cartItem.title}</div>
+            <div>{item.title}</div>
             <div>
-              <h4>{cartItem.brand}</h4>
+              <h4>{item.brand}</h4>
             </div>
           </div>
           <div className="prices">
             <div className="price">
-              <p>{cartItem.price} تومان</p>
-              <h5>{cartItem.discount} تومان</h5>
+              <p>{item.price} تومان</p>
+              <h5>{item.discount} تومان</h5>
             </div>
             <div className="icon">
-              <button className="btn">
+              <button className="btn" onClick={handelAmount}>
                 {" "}
                 <AddShoppingCartIcon />
+                <span className="badge">{amount}</span>
               </button>
             </div>
           </div>
