@@ -8,21 +8,21 @@ import CartSkeleton from "../cart-skeleton/CartSkeleton";
 import Pro from "../../assets/images (1).jpg";
 import Pro1 from "../../assets/download.jpg";
 
-const Products = ({ loading }) => {
-  const product = {
-    img: Pro,
-    title: "کرم روشن کننده حاوی آربوتین",
-    brand: "هیدرودرم",
-    price: "174000",
-    discount: "149000",
-  };
-  const product1 = {
-    img: Pro1,
-    title: "سرم روشن کننده حاوی آربوتین",
-    brand: "هیدرودرم",
-    price: "252000",
-    discount: "190000",
-  };
+const Products = ({ loading, handelAddToCart, item, amount, setAmount }) => {
+  // const product = {
+  //   img: Pro,
+  //   title: "کرم روشن کننده حاوی آربوتین",
+  //   brand: "هیدرودرم",
+  //   price: "174000",
+  //   discount: "149000",
+  // };
+  // const product1 = {
+  //   img: Pro1,
+  //   title: "سرم روشن کننده حاوی آربوتین",
+  //   brand: "هیدرودرم",
+  //   price: "252000",
+  //   discount: "190000",
+  // };
   return (
     <>
       {loading ? (
@@ -38,124 +38,23 @@ const Products = ({ loading }) => {
         </div>
       ) : (
         <div className="products">
-          <CartProduct
-            img={product.img}
-            title={product.title}
-            brand={product.brand}
-            price={product.price}
-            discount={product.discount}
-          />{" "}
-          <CartProduct
-            img={product.img}
-            title={product.title}
-            brand={product.brand}
-            price={product.price}
-            discount={product.discount}
-          />{" "}
-          <CartProduct
-            img={product.img}
-            title={product.title}
-            brand={product.brand}
-            price={product.price}
-            discount={product.discount}
-          />{" "}
-          <CartProduct
-            img={product1.img}
-            title={product1.title}
-            brand={product1.brand}
-            price={product1.price}
-            discount={product1.discount}
-          />{" "}
-          <CartProduct
-            img={product1.img}
-            title={product1.title}
-            brand={product1.brand}
-            price={product1.price}
-            discount={product1.discount}
-          />{" "}
-          <CartProduct
-            img={product1.img}
-            title={product1.title}
-            brand={product1.brand}
-            price={product1.price}
-            discount={product1.discount}
-          />{" "}
-          <CartProduct
-            img={product1.img}
-            title={product1.title}
-            brand={product1.brand}
-            price={product1.price}
-            discount={product1.discount}
-          />{" "}
-          <CartProduct
-            img={product1.img}
-            title={product1.title}
-            brand={product1.brand}
-            price={product1.price}
-            discount={product1.discount}
-          />{" "}
+          {item.map((item) => (
+            <CartProduct
+              item={item}
+              loading={loading}
+              handelAddToCart={handelAddToCart}
+              amount={amount}
+              setAmount={setAmount}
+            />
+          ))}
+          {/* <CartProduct
+            item={product}
+            loading={loading}
+            handelAddToCart={handelAddToCart}
+          />{" "} */}
         </div>
       )}
     </>
-
-    // <div className="products">
-    //   <CartProduct
-    //     img={product.img}
-    //     title={product.title}
-    //     brand={product.brand}
-    //     price={product.price}
-    //     discount={product.discount}
-    //   />{" "}
-    //   <CartProduct
-    //     img={product.img}
-    //     title={product.title}
-    //     brand={product.brand}
-    //     price={product.price}
-    //     discount={product.discount}
-    //   />{" "}
-    //   <CartProduct
-    //     img={product.img}
-    //     title={product.title}
-    //     brand={product.brand}
-    //     price={product.price}
-    //     discount={product.discount}
-    //   />{" "}
-    //   <CartProduct
-    //     img={product1.img}
-    //     title={product1.title}
-    //     brand={product1.brand}
-    //     price={product1.price}
-    //     discount={product1.discount}
-    //   />{" "}
-    //   <CartProduct
-    //     img={product1.img}
-    //     title={product1.title}
-    //     brand={product1.brand}
-    //     price={product1.price}
-    //     discount={product1.discount}
-    //   />{" "}
-    //   <CartProduct
-    //     img={product1.img}
-    //     title={product1.title}
-    //     brand={product1.brand}
-    //     price={product1.price}
-    //     discount={product1.discount}
-    //   />{" "}
-    //   <CartProduct
-    //     img={product1.img}
-    //     title={product1.title}
-    //     brand={product1.brand}
-    //     price={product1.price}
-    //     discount={product1.discount}
-    //   />{" "}
-    //   <CartProduct
-    //     img={product1.img}
-    //     title={product1.title}
-    //     brand={product1.brand}
-    //     price={product1.price}
-    //     discount={product1.discount}
-    //   />{" "}
-    // </div>
   );
 };
 

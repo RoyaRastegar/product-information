@@ -9,34 +9,27 @@ import KeyboardArrowDownRoundedIcon from "@mui/icons-material/KeyboardArrowDownR
 import FavoriteBorderRoundedIcon from "@mui/icons-material/FavoriteBorderRounded";
 import WorkspacePremiumIcon from "@mui/icons-material/WorkspacePremium";
 import FavoriteIcon from "@mui/icons-material/Favorite";
-import CartSkeleton from "../cart-skeleton/CartSkeleton";
 import MenuLink from "../menu-link/MenuLink";
 // import image
 import Image from "../../assets/images (2).jpg";
 import InfoSkeleton from "../information-skeleton/InfoSkeleton";
 
-const ProductCart = ({ loading }) => {
-  const category = ["بهداشتی", "مراقبت از پوست"];
-  const feature = ["آبرسان", "رطوبت رسان", "فاقد تست حیوانی"];
+const ProductCart = ({ loading, handelAddToCart, item, category, feature }) => {
+  // const category = ["بهداشتی", "مراقبت از پوست"];
+  // const feature = ["آبرسان", "رطوبت رسان", "فاقد تست حیوانی"];
 
   const [count, setCount] = useState(0);
   const [like, setLike] = useState(false);
-
+  const [message, setMessage] = useState("");
+  function addToCart(item) {
+    item.amount = count;
+    setMessage("محصول با موفقیت ثبت شد");
+  }
   function handelLike() {
     setLike((like) => !like);
   }
-  const product = {
-    img: Image,
-    titlePer: "سرم آبرسان پوست 40 میل بایومارین",
-    titleEng: "DETOX Ultra Hydrating Serum 40ml BIOMARINE",
-    category: { category },
-    feature: { feature },
-    price: "450000",
-    discount: "10",
-  };
-  const offer = (product.price * product.discount) / 100;
-  const priceAfterDiscount = product.price - offer;
-  console.log(like);
+  const offer = (item.price * item.discountPercent) / 100;
+  const priceAfterDiscount = item.price - offer;
 
   return (
     <>
@@ -47,11 +40,11 @@ const ProductCart = ({ loading }) => {
       ) : (
         <div className="product-cart">
           <div className="cart-img">
-            <img src={product.img} alt="no pictur" />
+            <img src={item.img} alt="no pictur" />
           </div>
           <div className="cart-info">
-            <h3>{product.titlePer} </h3>
-            <h4>{product.titleEng} </h4>
+            <h3>{item.titlePer} </h3>
+            <h4>{item.titleEng} </h4>
             <h4>
               دسته بندی:
               {category.map((item) => (
@@ -92,19 +85,19 @@ const ProductCart = ({ loading }) => {
             </div>
             <hr />
             <div>
-              <div className="button">
+              <div className="button-menu">
                 <div className="price">
                   <p className="has-discount">
-                    {product.price}
+                    {item.price}
                     تومان
                   </p>
                   <p> {priceAfterDiscount} تومان</p>
                 </div>
                 <div className="discount">
-                  <p>{product.discount}%</p>
+                  <p>{item.discountPercent}%</p>
                 </div>
               </div>
-              <div className="button">
+              <div className="button-count">
                 <div className="count">
                   <button className="add" onClick={() => setCount(count + 1)}>
                     +
@@ -122,8 +115,11 @@ const ProductCart = ({ loading }) => {
                   )}
                 </div>
               </div>
-              <div className="button">
-                <button className="add-product">افزودن به سبد خرید</button>
+              <div className="button-add">
+                <button className="add-product" onClick={() => addToCart(item)}>
+                  افزودن به سبد خرید
+                </button>
+                <span className="message">{message}</span>
               </div>
             </div>
           </div>
