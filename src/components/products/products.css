@@ -1,0 +1,8 @@
+.products, .countainer {
+  display: grid;
+  grid-template-columns: auto auto auto auto;
+  gap: 5px;
+  -moz-column-gap: 5px;
+       column-gap: 5px;
+  justify-content: center;
+}/*# sourceMappingURL=products.css.map */

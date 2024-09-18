@@ -1,0 +1,100 @@
+@import "colors";
+@mixin border {
+  border: 1px solid;
+  border-radius: 10px;
+}
+@mixin btn-add-dec {
+  border: none;
+  width: 50px;
+  height: 40px;
+  font-size: 20px;
+  cursor: pointer;
+  background-color: $myDarkGreen;
+  color: white;
+}
+@mixin display-flex {
+  display: flex;
+  justify-content: space-between;
+}
+
+.shopping-cart-item {
+  display: flex;
+  flex-direction: row;
+  width: 500px;
+  height: 100px;
+  border: 1px solid;
+  border-radius: 10px;
+  text-align: center;
+  .countainer-img {
+    width: 20%;
+    height: 100%;
+    align-content: center;
+    border-radius: 0 10px 10px 0;
+    img {
+      width: 100px;
+      border-radius: 0 10px 10px 0;
+    }
+  }
+  .countainer-description {
+    @include display-flex;
+    flex-direction: column;
+    width: 80%;
+    border-radius: 10px 0 0 10px;
+    .top {
+      @include display-flex;
+      height: 50%;
+      .top-right {
+        padding-top: 5px;
+        padding-right: 15px;
+      }
+      .top-left {
+        padding-left: 20px;
+        padding-top: 5px;
+        button {
+          @include border;
+          background-color: white;
+          color: red;
+          padding: 10px;
+        }
+      }
+    }
+    .bottom {
+      @include display-flex;
+      height: 50%;
+      .bottom-right {
+        text-align: justify;
+        display: flex;
+        flex-direction: column;
+        padding-top: 5px;
+        padding-right: 15px;
+        width: 50%;
+        height: 40px;
+        .price {
+          font-size: 15px;
+          text-decoration: line-through;
+        }
+      }
+      .bottom-left {
+        @include display-flex;
+        text-align: center;
+        align-items: center;
+        border: 1px solid black;
+        border-radius: 5px;
+        width: 50%;
+        height: 40px;
+        margin-right: 20px;
+        margin-left: 20px;
+        background-color: #43b02a;
+        color: white;
+        .add {
+          @include btn-add-dec;
+          border-radius: 0 5px 5px 0;
+        }
+        .dec {
+          @include btn-add-dec;
+          border-radius: 5px 0 0 5px;
+        }
+      }
+    }
+  }
+}

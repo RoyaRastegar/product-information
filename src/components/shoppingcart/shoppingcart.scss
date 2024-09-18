@@ -1,0 +1,75 @@
+@import "colors";
+
+@mixin myfont-size {
+  font-size: 16px;
+  color: white;
+}
+@mixin aline-item-center {
+  display: flex;
+  align-items: center;
+}
+@mixin border {
+  border: 1px solid;
+  border-radius: 10px;
+}
+.shopping-item-countainer {
+  padding: inheri;
+}
+
+.cart-header {
+  @include aline-item-center;
+  justify-content: space-between;
+  background-color: $myLightGreen;
+  width: 100%;
+  height: 50px;
+  color: white;
+  div {
+    width: 50%;
+    h3 {
+      padding-right: 20px;
+    }
+  }
+  .clear {
+    width: 50%;
+    text-align: -webkit-left;
+    button {
+      margin-left: 5px;
+      cursor: pointer;
+    }
+  }
+  .clearcart {
+    @include myfont-size;
+    @include border;
+    border-color: grey;
+    background-color: $myLightGreen;
+    padding: 10px;
+  }
+}
+.cart-footer {
+  @include myfont-size;
+  @include aline-item-center;
+  background-color: $myLightGreen;
+  margin-top: auto;
+  width: 100%;
+  height: 50px;
+  .finish {
+    width: 80%;
+    text-align: center;
+    button {
+      @include myfont-size;
+      background-color: $myLightGreen;
+      border: none;
+      font-weight: 700;
+    }
+  }
+  .total-price {
+    @include myfont-size;
+    @include border;
+    border-color: gray;
+    background-color: $myLightGreen;
+    margin-left: 5px;
+    padding: 10px;
+    text-align: center;
+    width: 30%;
+  }
+}

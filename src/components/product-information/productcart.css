@@ -1,0 +1,153 @@
+.product-cart {
+  display: flex;
+  height: 500px;
+  padding: 100px;
+}
+.product-cart .cart-img {
+  flex: 3.5;
+  border: 1px solid gray;
+  border-radius: 20px;
+  text-align: center;
+  -o-object-fit: cover;
+     object-fit: cover;
+}
+.product-cart .cart-img img {
+  height: 350px;
+}
+.product-cart .cart-info {
+  flex: 4.5;
+  padding: 20px;
+  margin-right: 20px;
+}
+.product-cart .cart-info h5 {
+  font-weight: 900;
+  font-size: 10px;
+}
+.product-cart .cart-info h5 .category-list {
+  list-style-type: none;
+}
+.product-cart .cart-info .button {
+  display: flex;
+}
+.product-cart .cart-info button {
+  border: none;
+  background-color: white;
+  color: rgb(216, 46, 216);
+  cursor: pointer;
+  font-size: 15px;
+}
+.product-cart .cart-price {
+  flex: 3.5;
+  border: 1px solid gray;
+  border-radius: 20px;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+.product-cart .cart-price hr {
+  width: 300px;
+}
+.product-cart .cart-price .more {
+  height: 50%;
+}
+.product-cart .cart-price .button-menu {
+  width: 100%;
+  display: flex;
+}
+.product-cart .cart-price .button-menu .price {
+  width: 70%;
+  text-align: center;
+}
+.product-cart .cart-price .button-menu .price .has-discount {
+  text-decoration: line-through;
+}
+.product-cart .cart-price .button-menu .discount {
+  width: 30%;
+  text-align: -webkit-center;
+  background-color: black;
+  color: white;
+  width: 40px;
+  height: 40px;
+  margin-right: 50px;
+  margin-top: 30px;
+  text-align: center;
+  background-color: rgb(255, 9, 108);
+  border-radius: 5px;
+  padding-top: 5px;
+}
+.product-cart .cart-price .button-menu .discount p {
+  margin-top: 5px;
+}
+.product-cart .cart-price .button-count {
+  width: 100%;
+  display: flex;
+}
+.product-cart .cart-price .button-count .count {
+  border-radius: 5px;
+  text-align: center;
+  display: flex;
+  justify-content: space-between;
+  width: 70%;
+  border: 1px solid black;
+  margin-right: 20px;
+  height: 40px;
+  align-items: center;
+}
+.product-cart .cart-price .button-count .count .add {
+  border: none;
+  border-radius: 0 5px 5px 0;
+  width: 50px;
+  height: 40px;
+  font-size: 20px;
+  cursor: pointer;
+}
+.product-cart .cart-price .button-count .count .dec {
+  border: none;
+  border-radius: 5px 0 0 5px;
+  width: 50px;
+  height: 40px;
+  font-size: 20px;
+  cursor: pointer;
+}
+.product-cart .cart-price .button-count .like {
+  width: 30%;
+  text-align: -webkit-center;
+  background-color: black;
+  color: white;
+  width: 40px;
+  height: 40px;
+  margin-right: 28px;
+  text-align: center;
+  cursor: pointer;
+  align-content: center;
+  border-radius: 5px;
+  padding-top: 5px;
+}
+.product-cart .cart-price .button-count .like .like-active {
+  color: red;
+  background-color: black;
+}
+.product-cart .cart-price .button-add {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+}
+.product-cart .cart-price .button-add .add-product {
+  border: none;
+  margin-top: 25px;
+  border-radius: 2px;
+  height: 30px;
+  margin-right: 10px;
+  width: 90%;
+  background-color: rgb(255, 9, 108);
+  color: white;
+  cursor: pointer;
+}
+.product-cart .cart-price .button-add .message {
+  text-align: center;
+  color: green;
+}
+.product-cart .cart-price .button-add .add-product:hover {
+  border-bottom: 2px solid black;
+  font-size: 15px;
+}/*# sourceMappingURL=productcart.css.map */

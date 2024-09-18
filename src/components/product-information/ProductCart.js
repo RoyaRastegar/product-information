@@ -14,7 +14,7 @@ import MenuLink from "../menu-link/MenuLink";
 import Image from "../../assets/images (2).jpg";
 import InfoSkeleton from "../information-skeleton/InfoSkeleton";
 
-const ProductCart = ({ loading, handelAddToCart, item, category, feature }) => {
+const ProductCart = ({ loading, item, category, feature }) => {
   // const category = ["بهداشتی", "مراقبت از پوست"];
   // const feature = ["آبرسان", "رطوبت رسان", "فاقد تست حیوانی"];
 

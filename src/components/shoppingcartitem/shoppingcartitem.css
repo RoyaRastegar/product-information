@@ -1,0 +1,89 @@
+.shopping-cart-item {
+  display: flex;
+  flex-direction: row;
+  width: 500px;
+  height: 100px;
+  border: 1px solid;
+  border-radius: 10px;
+  text-align: center;
+}
+.shopping-cart-item .countainer-img {
+  width: 20%;
+  height: 100%;
+  align-content: center;
+  border-radius: 0 10px 10px 0;
+}
+.shopping-cart-item .countainer-img img {
+  width: 100px;
+  border-radius: 0 10px 10px 0;
+}
+.shopping-cart-item .countainer-description {
+  display: flex;
+  justify-content: space-between;
+  flex-direction: column;
+  width: 80%;
+  border-radius: 10px 0 0 10px;
+}
+.shopping-cart-item .countainer-description .top {
+  display: flex;
+  justify-content: space-between;
+  height: 50%;
+}
+.shopping-cart-item .countainer-description .top .top-right {
+  padding-top: 5px;
+  padding-right: 15px;
+}
+.shopping-cart-item .countainer-description .top .top-left {
+  padding-left: 20px;
+  padding-top: 5px;
+}
+.shopping-cart-item .countainer-description .top .top-left button {
+  border: 1px solid;
+  border-radius: 10px;
+  background-color: white;
+  color: red;
+  padding: 10px;
+}
+.shopping-cart-item .countainer-description .bottom {
+  display: flex;
+  justify-content: space-between;
+  height: 50%;
+}
+.shopping-cart-item .countainer-description .bottom .bottom-right {
+  padding-top: 5px;
+  padding-right: 15px;
+}
+.shopping-cart-item .countainer-description .bottom .bottom-left {
+  display: flex;
+  justify-content: space-between;
+  text-align: center;
+  align-items: center;
+  border: 1px solid black;
+  border-radius: 5px;
+  width: 50%;
+  height: 40px;
+  margin-right: 20px;
+  margin-left: 20px;
+  background-color: #43b02a;
+  color: white;
+}
+.shopping-cart-item .countainer-description .bottom .bottom-left .add {
+  border: none;
+  width: 50px;
+  height: 40px;
+  font-size: 20px;
+  cursor: pointer;
+  background-color: #43b02a;
+  color: white;
+  border-radius: 0 5px 5px 0;
+}
+.shopping-cart-item .countainer-description .bottom .bottom-left .dec {
+  border: none;
+  width: 50px;
+  height: 40px;
+  font-size: 20px;
+  cursor: pointer;
+  background-color: #43b02a;
+  color: white;
+  border-radius: 5px 0 0 5px;
+}/*# sourceMappingURL=shoppingcartitem.css.map */
