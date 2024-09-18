@@ -1,0 +1,88 @@
+.shopping {
+  width: 150px;
+  height: 30px;
+  display: flex;
+  justify-content: space-around;
+  background-color: green;
+  color: white;
+  border: 1px solid;
+  border-radius: 20px;
+  align-items: center;
+  padding: 5px;
+  cursor: pointer;
+}
+.shopping .shopping-icon {
+  font-size: 20px;
+  margin-top: 10px;
+}
+
+.shopping-box {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 500px;
+  height: 100%;
+  padding: 2px;
+}
+.shopping-box .cart-header {
+  display: flex;
+  background-color: #8cb634;
+  width: 100%;
+  height: 50px;
+  color: white;
+  justify-content: space-between;
+  align-items: center;
+}
+.shopping-box .cart-header div {
+  width: 50%;
+}
+.shopping-box .cart-header div h3 {
+  padding-right: 20px;
+}
+.shopping-box .cart-header .clear {
+  width: 50%;
+  text-align: -webkit-left;
+}
+.shopping-box .cart-header .clear button {
+  margin-left: 5px;
+  cursor: pointer;
+}
+.shopping-box .cart-header .clearcart {
+  border-radius: 10px;
+  font-size: 15px;
+  background-color: #8cb634;
+  color: white;
+  padding: 10px;
+  border: 1px solid gray;
+}
+.shopping-box .cart-footer {
+  display: flex;
+  margin-top: auto;
+  background-color: #8cb634;
+  align-items: center;
+  width: 100%;
+  height: 50px;
+  color: white;
+}
+.shopping-box .cart-footer .finish {
+  width: 80%;
+  text-align: center;
+}
+.shopping-box .cart-footer .finish button {
+  font-size: 16px;
+  background-color: #8cb634;
+  border: none;
+  color: white;
+  font-weight: 700;
+}
+.shopping-box .cart-footer .total-price {
+  border-radius: 10px;
+  font-size: 15px;
+  background-color: #8cb634;
+  color: white;
+  padding: 10px;
+  border: 1px solid gray;
+  text-align: center;
+  width: 30%;
+  margin-left: 5px;
+}/*# sourceMappingURL=shoppingcartbtn.css.map */

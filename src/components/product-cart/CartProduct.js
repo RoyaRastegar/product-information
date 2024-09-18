@@ -3,14 +3,8 @@ import "react-loading-skeleton/dist/skeleton.css";
 import AddShoppingCartIcon from "@mui/icons-material/AddShoppingCart";
 // import image
 import CartSkeleton from "../cart-skeleton/CartSkeleton";
-import { useState } from "react";
-
-const CartProduct = ({ loading, item, handelAddToCart }) => {
-  const [amount, setAmount] = useState(item.amount || 0);
-  function handelAmount() {
-    setAmount(amount + 1);
-    handelAddToCart(item);
-  }
+import Badge from "@mui/material/Badge";
+const CartProduct = ({ loading, item, addToCart }) => {
   return (
     <>
       {loading ? (
@@ -39,11 +33,12 @@ const CartProduct = ({ loading, item, handelAddToCart }) => {
               <h5>{item.discount} تومان</h5>
             </div>
             <div className="icon">
-              <button className="btn" onClick={handelAmount}>
-                {" "}
-                <AddShoppingCartIcon />
-                <span className="badge">{amount}</span>
-              </button>
+              <Badge badgeContent={item.amount} color="error">
+                <button className="btn" onClick={() => addToCart(item)}>
+                  {" "}
+                  <AddShoppingCartIcon />
+                </button>
+              </Badge>
             </div>
           </div>
         </div>

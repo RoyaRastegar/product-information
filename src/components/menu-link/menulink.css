@@ -1,0 +1,10 @@
+.menuLink {
+  display: flex;
+  padding: 10px;
+  align-items: center;
+  font-size: 500;
+}
+.menuLink .menuLinkText {
+  margin-left: 10px;
+  margin-right: 5px;
+}/*# sourceMappingURL=menulink.css.map */
