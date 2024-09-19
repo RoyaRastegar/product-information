@@ -21,6 +21,13 @@ export default function reducerShoppingCart(state = initialState, action) {
         ...state,
         cartItems: [...state.cartItems, { ...action.payload, amount: 1 }],
       };
+    case "UpdateAmount":
+      return {
+        cartItems: state.cartItems.map(
+          (item) =>
+            item.id === action.payload ? { ...item, amount: item.amount } : item // سایر محصولات دست نخورده باقی می‌مانند
+        ),
+      };
     case "RemoveFromCart":
       return {
         ...state,
@@ -47,21 +54,6 @@ export default function reducerShoppingCart(state = initialState, action) {
       };
     case "ClearShoppingCart":
       return { ...state, cartItems: [] };
-    // case "UpdateAmount":
-    //   return {
-    //     ...state,
-    //     cartItems: state.cartItems.map(
-    //       (item) =>
-    //         item.id === action.payload
-    //           ? { ...item, amount: item.amount + 1 }
-    //           : item // سایر محصولات دست نخورده باقی می‌مانند
-    //     ),
-    //   };
-    // const item = state.cartItems.find((item) => item.id === action.payload);
-    // return {
-    //   ...state,
-    //   amount: item ? item.amount : 0,
-    // };
 
     default:
       return state;
@@ -79,6 +71,6 @@ export function removeAllItem(id) {
 export function clearShoppingCart() {
   return { type: "ClearShoppingCart" };
 }
-// export function updateAmount(id) {
-//   return { type: "UpdateAmount", payload: id };
-// }
+export function updateAmount(id) {
+  return { type: "UpdateAmount", payload: id };
+}
