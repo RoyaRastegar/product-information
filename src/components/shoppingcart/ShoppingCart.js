@@ -1,17 +1,16 @@
 import React from "react";
 import "./shoppingcart.scss";
 import ShoppingCartItem from "../shoppingcartitem/ShoppingCartItem";
-const ShoppingCart = ({
-  cartItems,
-  addToCart,
-  removeFromCart,
-  setCartItems,
-}) => {
+import { useSelector, useDispatch } from "react-redux";
+import { clearShoppingCart } from "../../featurs/shoppingcart/shoppingSlice";
+const ShoppingCart = () => {
+  const cartItems = useSelector((store) => store.cartItems);
+
   const caculateTotal = (items) =>
     items.reduce((ack, item) => ack + item.amount * item.price, 0);
-
-  function clearShoppingCart() {
-    setCartItems([]);
+  const dispatch = useDispatch();
+  function clearShop() {
+    dispatch(clearShoppingCart());
   }
   return (
     <>
@@ -20,7 +19,7 @@ const ShoppingCart = ({
           <h3>سبد خرید</h3>
         </div>
         <div className="clear">
-          <button className="clearcart" onClick={clearShoppingCart}>
+          <button className="clearcart" onClick={clearShop}>
             خالی کردن سبد خرید
           </button>
         </div>
@@ -28,12 +27,7 @@ const ShoppingCart = ({
       {cartItems.length === 0 ? <p>سبد خالی است</p> : null}
       {cartItems.map((item) => (
         <div className="shopping-item-countainer">
-          <ShoppingCartItem
-            item={item}
-            removeFromCart={removeFromCart}
-            addToCart={addToCart}
-            setCartItems={setCartItems}
-          />
+          <ShoppingCartItem item={item} />
         </div>
       ))}
       <div className="cart-footer">

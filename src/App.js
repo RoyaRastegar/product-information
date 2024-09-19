@@ -90,7 +90,6 @@ function App() {
       }, [])
     );
   };
-  console.log(cartItems);
   return (
     <Routes>
       <Route path="/" element={<Home />} />
@@ -101,10 +100,10 @@ function App() {
           <Products
             loading={loading}
             item={item}
-            addToCart={handelAddToCart}
-            cartItems={cartItems}
-            removeFromCart={handelRemoveFromCart}
-            setCartItems={setCartItems}
+            // addToCart={handelAddToCart}
+            // cartItems={cartItems}
+            // removeFromCart={handelRemoveFromCart}
+            // setCartItems={setCartItems}
           />
         }
       />
