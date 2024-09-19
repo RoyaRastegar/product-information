@@ -5,14 +5,7 @@ import CartProduct from "../product-cart/CartProduct";
 import CartSkeleton from "../cart-skeleton/CartSkeleton";
 import ShoppingCartBtn from "../../components/shoppingcartbtn/ShoppingCartBtn";
 
-const Products = ({
-  loading,
-  item,
-  addToCart,
-  cartItems,
-  removeFromCart,
-  setCartItems,
-}) => {
+const Products = ({ loading, item }) => {
   return (
     <>
       {loading ? (
@@ -28,19 +21,10 @@ const Products = ({
         </div>
       ) : (
         <>
-          <ShoppingCartBtn
-            cartItems={cartItems}
-            addToCart={addToCart}
-            removeFromCart={removeFromCart}
-            setCartItems={setCartItems}
-          />
+          <ShoppingCartBtn />
           <div className="products">
             {item.map((item) => (
-              <CartProduct
-                item={item}
-                loading={loading}
-                addToCart={addToCart}
-              />
+              <CartProduct item={item} loading={loading} />
             ))}
           </div>
         </>

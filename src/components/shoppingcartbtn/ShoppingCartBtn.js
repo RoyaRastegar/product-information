@@ -4,15 +4,10 @@ import AddShoppingCartIcon from "@mui/icons-material/AddShoppingCart";
 import Drawer from "@mui/material/Drawer";
 import Box from "@mui/material/Box";
 import ShoppingCart from "../shoppingcart/ShoppingCart";
-
-const ShoppingCartBtn = ({
-  cartItems,
-  addToCart,
-  removeFromCart,
-  setCartItems,
-}) => {
+import { useSelector } from "react-redux";
+const ShoppingCartBtn = () => {
   const [cartOpen, setCartOpen] = useState(false);
-
+  const cartItems = useSelector((store) => store.cartItems);
   const handleDrawerToggle = (openState) => (event) => {
     if (
       event.type === "keydown" &&
@@ -22,7 +17,6 @@ const ShoppingCartBtn = ({
     }
     setCartOpen(openState);
   };
-
   return (
     <>
       <div className="shopping" onClick={() => setCartOpen(true)}>
@@ -40,12 +34,7 @@ const ShoppingCartBtn = ({
         onClose={handleDrawerToggle(false)}
       >
         <Box className="shopping-box" role="presentation">
-          <ShoppingCart
-            cartItems={cartItems}
-            addToCart={addToCart}
-            removeFromCart={removeFromCart}
-            setCartItems={setCartItems}
-          />
+          <ShoppingCart />
         </Box>
       </Drawer>
     </>
