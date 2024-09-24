@@ -17,6 +17,7 @@ const ShoppingCartBtn = () => {
     }
     setCartOpen(openState);
   };
+  console.log(cartItems);
   return (
     <>
       <div className="shopping" onClick={() => setCartOpen(true)}>
