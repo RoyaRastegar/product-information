@@ -11,26 +11,32 @@ import WorkspacePremiumIcon from "@mui/icons-material/WorkspacePremium";
 import FavoriteIcon from "@mui/icons-material/Favorite";
 import MenuLink from "../menu-link/MenuLink";
 // import image
-import Image from "../../assets/images (2).jpg";
 import InfoSkeleton from "../information-skeleton/InfoSkeleton";
-
+import { useDispatch, useSelector } from "react-redux";
+import { addToCart } from "../../featurs/shoppingcart/shoppingSlice";
 const ProductCart = ({ loading, item, category, feature }) => {
-  // const category = ["بهداشتی", "مراقبت از پوست"];
-  // const feature = ["آبرسان", "رطوبت رسان", "فاقد تست حیوانی"];
-
   const [count, setCount] = useState(0);
   const [like, setLike] = useState(false);
   const [message, setMessage] = useState("");
-  function addToCart(item) {
-    item.amount = count;
+  const dispatch = useDispatch();
+  const cartItems = useSelector((store) => store.cartItems);
+  // function addToCart(item) {
+  //   item.amount = count;
+  //   setMessage("محصول با موفقیت ثبت شد");
+  // }
+  function handelAddToCart(item) {
+    if (!count) return setMessage("لطفا تعداد محصول را انتخاب کنید");
+    const newItem = { ...item, amount: count };
+    dispatch(addToCart(newItem));
     setMessage("محصول با موفقیت ثبت شد");
+    console.log(newItem);
+    console.log(cartItems);
   }
   function handelLike() {
     setLike((like) => !like);
   }
   const offer = (item.price * item.discountPercent) / 100;
   const priceAfterDiscount = item.price - offer;
-
   return (
     <>
       {loading ? (
@@ -116,7 +122,10 @@ const ProductCart = ({ loading, item, category, feature }) => {
                 </div>
               </div>
               <div className="button-add">
-                <button className="add-product" onClick={() => addToCart(item)}>
+                <button
+                  className="add-product"
+                  onClick={() => handelAddToCart(item)}
+                >
                   افزودن به سبد خرید
                 </button>
                 <span className="message">{message}</span>

@@ -16,11 +16,22 @@ export default function reducerShoppingCart(state = initialState, action) {
               : item
           ),
         };
+      } else {
+        if (action.payload.amount) {
+          return {
+            ...state,
+            cartItems: [
+              ...state.cartItems,
+              { ...action.payload, amount: action.payload.amount },
+            ],
+          };
+        }
+        return {
+          ...state,
+          cartItems: [...state.cartItems, { ...action.payload, amount: 1 }],
+        };
       }
-      return {
-        ...state,
-        cartItems: [...state.cartItems, { ...action.payload, amount: 1 }],
-      };
+
     case "UpdateAmount":
       return {
         cartItems: state.cartItems.map(
