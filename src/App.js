@@ -9,6 +9,7 @@ import CartItemImage from "./assets/download.jpg";
 import Img from "./assets/images (2).jpg";
 import ShoppingCart from "./components/shoppingcart/ShoppingCart";
 import ShoppingCartItem from "./components/shoppingcartitem/ShoppingCartItem";
+import LoginForm from "./components/login/LoginForm";
 function App() {
   const [loading, setLoading] = useState(true);
   const [cartItems, setCartItems] = useState([]);
@@ -119,6 +120,7 @@ function App() {
           />
         }
       />
+      <Route path="login" element={<LoginForm />} />
     </Routes>
   );
 }
