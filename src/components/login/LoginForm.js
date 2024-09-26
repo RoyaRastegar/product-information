@@ -76,10 +76,15 @@ const LoginForm = () => {
               required
             />
             <LockOpenIcon className="icon" />
+            <div className="forgot">
+              رمزخودرا فراموش کرده اید؟
+              <span>کلیک کنید</span>
+            </div>
           </div>
+
           <div className="login">
             <button type="submit" className="submit">
-              Login
+              ورود
             </button>
           </div>
         </form>

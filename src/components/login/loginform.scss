@@ -8,6 +8,17 @@
   font-size: 16px;
   color: #333;
 }
+@mixin btn-input {
+  width: 100%;
+  height: 45px;
+  background: #fff;
+  border: none;
+  outline: none;
+  border-radius: 40px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+  cursor: pointer;
+  font-weight: 700;
+}
 .wrapper {
   position: absolute;
   top: 50%;
@@ -16,14 +27,12 @@
   width: 420px;
   height: 450px;
   border-radius: 20px;
-  background: seagreen;
   color: #fff;
   display: flex;
   align-items: center;
-  background-color: #198ab0;
-  transition: height 0.2s ease;
+  background: linear-gradient(#00ced1, #87ceeb);
+  // background-color: #198ab0;
   border: 2px solid rgba(255, 255, 255, 0.1);
-  backdrop-filter: blur(30px);
   border-radius: 10px;
   box-shadow: 0 0 10px rgba(0, 0, 0, -2);
   .form-box {
@@ -32,21 +41,13 @@
     form h2 {
       font-size: 36px;
       text-align: center;
-      color: #80c1f9;
+      color: #dcdcdc;
     }
     .input-box {
       @include input-format;
       .input {
         @include font-size;
-        width: 100%;
-        height: 45px;
-        background: #fff;
-        border: none;
-        outline: none;
-        border-radius: 40px;
-        box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
-        cursor: pointer;
-        font-weight: 700;
+        @include btn-input;
         text-align: center;
       }
       input::placeholder {
@@ -56,34 +57,32 @@
 
       .icon {
         @include font-size;
-
         position: absolute;
         right: 20px;
         top: 50%;
         translate: 0 -50%;
       }
+      .forgot {
+        color: #dcdcdc;
+        font-size: 13px;
+        margin-right: 20px;
+        font-weight: 500;
+        span {
+          cursor: pointer;
+        }
+      }
     }
+
     .login {
       @include input-format;
       .submit {
         @include font-size;
-
-        width: 100%;
-        height: 45px;
-        background: #fff;
-        border: none;
-        outline: none;
-        border-radius: 40px;
-        box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
-        cursor: pointer;
-        font-weight: 700;
+        @include btn-input;
       }
       button:hover {
-        color: white;
-        padding: "10px 20px";
-        background: linear-gradient(264deg, #198ab0 -5.09%, #77bfe9 106.28%);
-        font-size: "16px";
-        transition: transform 0.3s ease;
+        color: #dcdcdc;
+        background: linear-gradient(264deg, #00ffff -6.09%, #77bfe9 90.28%);
+        font-size: 20px;
       }
     }
   }
